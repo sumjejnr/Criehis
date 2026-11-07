@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111214">
+  <meta name="description" content="사건 파일 07 — 사라진 마지막 밤. 모바일 추리 게임">
+  <title>CASE 07 : 사라진 마지막 밤</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Serif+KR:wght@400;500;600;700&family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="사건 파일 홈"><span class="brand-mark">C</span><span>CRIME<br><b>ARCHIVE</b></span></a>
+    <div class="case-status"><span class="live-dot"></span> CASE FILE <b>07</b></div>
+    <button class="sound-toggle" id="soundToggle" aria-label="효과음 켜기">♫ <span>OFF</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-image"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">UNSOLVED INCIDENT <span>／</span> 2025.11.14</p>
+        <div class="case-number">CASE<br><strong>07</strong></div>
+        <h1>사라진<br><em>마지막 밤</em></h1>
+        <p class="hero-desc">모두가 마지막으로 목격한 밤.<br>그리고 단 한 명만이 숨기고 있는 진실.</p>
+        <button class="primary-btn" id="startBtn">사건 파일 열람하기 <span>↗</span></button>
+        <div class="hero-foot"><span>SEOUL, KOREA</span><span>CONFIDENTIAL — LEVEL 03</span></div>
+      </div>
+      <div class="vertical-stamp">DO NOT DISTRIBUTE · EVIDENCE COPY</div>
+    </section>
+
+    <section class="brief section-pad" id="brief">
+      <div class="section-kicker"><span>01</span> INCIDENT REPORT</div>
+      <div class="brief-grid">
+        <div>
+          <h2>사건 개요</h2>
+          <p class="serif-lead">“그날 밤, 별관에는<br>다섯 명이 있었다.”</p>
+        </div>
+        <div class="brief-copy">
+          <p>2025년 11월 14일 밤 11시 40분. 예술고등학교 별관 자료실에서 재학생 <b>서하린(19)</b>이 의식을 잃은 채 발견되었다. 현장에는 외부 침입 흔적이 없었고, 자료실의 출입 기록은 사건 발생 전후 27분간 비어 있었다.</p>
+          <p>당시 건물에 남아 있던 사람은 피해자를 포함해 다섯 명. 모두 서로 다른 진술을 하고 있다.</p>
+          <div class="facts">
+            <div><small>VICTIM</small><b>서하린 / 19세</b></div>
+            <div><small>LOCATION</small><b>예술고등학교 별관</b></div>
+            <div><small>TIME</small><b>23:40 — 23:57</b></div>
+            <div><small>STATUS</small><b class="red-text">RE-INVESTIGATING</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="suspects section-pad" id="suspects">
+      <div class="section-kicker"><span>02</span> PERSONS OF INTEREST</div>
+      <div class="section-heading"><div><h2>용의자 파일</h2><p>다섯 명의 진술을 대조하라.</p></div><span class="count">05 <i>/</i> 05</span></div>
+      <div class="suspect-list" id="suspectList"></div>
+    </section>
+
+    <section class="evidence section-pad" id="evidence">
+      <div class="section-kicker"><span>03</span> EVIDENCE ROOM</div>
+      <div class="section-heading"><div><h2>증거 보관실</h2><p>현장에서 확보된 자료. 눌러서 상세 내용을 확인하라.</p></div><span class="count" id="evidenceCount">00 / 06</span></div>
+      <div class="evidence-grid" id="evidenceGrid"></div>
+      <p class="micro-note">※ 증거는 열람한 뒤 수첩에 자동 기록됩니다.</p>
+    </section>
+
+    <section class="notebook section-pad" id="notebook">
+      <div class="section-kicker"><span>04</span> INVESTIGATION NOTES</div>
+      <div class="section-heading"><div><h2>수사 수첩</h2><p>확보한 정보와 개인적인 추리를 기록한다.</p></div><span class="notebook-icon">✎</span></div>
+      <div class="notebook-paper">
+        <div class="paper-top"><span>FIELD NOTES / 07</span><span id="noteDate">14 NOV 2025</span></div>
+        <div class="progress-line"><span id="progressBar"></span></div>
+        <p class="progress-label" id="progressLabel">아직 확인한 증거가 없습니다.</p>
+        <label for="myNotes">MY DEDUCTION</label>
+        <textarea id="myNotes" placeholder="의심스러운 점, 인물들의 모순, 범인에 대한 추리를 자유롭게 적어보세요.&#10;&#10;예) 23:20에 자료실 근처에 있었다는 사람은..."></textarea>
+        <div class="paper-bottom"><span>YOUR NOTES ARE SAVED ON THIS DEVICE</span><span>PAGE 01</span></div>
+      </div>
+    </section>
+
+    <section class="ending section-pad" id="ending">
+      <div class="section-kicker"><span>05</span> FINAL ACCUSATION</div>
+      <div class="ending-inner">
+        <p class="eyebrow">THE LAST QUESTION</p>
+        <h2>이 사건의<br><em>범인은 누구인가?</em></h2>
+        <p>모든 증거를 확인하고, 가장 앞뒤가 맞는 인물을 선택하라.<br>선택을 제출하면 사건의 진상이 공개된다.</p>
+        <div class="accusation-options" id="accusationOptions"></div>
+        <button class="primary-btn submit-btn" id="submitAccusation">최종 지목하기 <span>↗</span></button>
+        <div class="result" id="result" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="빠른 이동">
+    <a href="#brief"><span>⌂</span><small>사건</small></a>
+    <a href="#suspects"><span>♙</span><small>용의자</small></a>
+    <a href="#evidence"><span>▧</span><small>증거</small></a>
+    <a href="#notebook"><span>✎</span><small>수첩</small></a>
+    <a href="#ending"><span>◎</span><small>결말</small></a>
+  </nav>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close aria-label="닫기">×</button>
+      <div class="modal-kicker" id="modalKicker">PERSON OF INTEREST</div>
+      <div id="modalContent"></div>
+    </article>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
